@@ -1,0 +1,97 @@
+well,strain,drug,conc,name
+A01,,DMSO,0.5%,DMSO
+B01,,DMSO,0.5%,DMSO
+C01,,DMSO,0.5%,DMSO
+D01,,DMSO,0.5%,DMSO
+E01,,DMSO,0.5%,DMSO
+F01,,DMSO,0.5%,DMSO
+G01,,DMSO,0.5%,DMSO
+H01,,DMSO,0.5%,DMSO
+A02,,HY-B0454,10mM  * 10uL,Miconazole
+B02,,HY-B1794,10mM  * 10uL,Thiethylperazine
+C02,,HY-B1101A,10mM  * 10uL,Pimethixene maleate
+D02,,HY-10119,10mM  * 10uL,Vorapaxar
+E02,,HY-B1013,10mM  * 10uL,Flurandrenolide
+F02,,HY-16474,10mM  * 10uL,Relugolix
+G02,,HY-B0248,10mM  * 10uL,Desonide
+H02,,HY-15516,10mM  * 10uL,Sotagliflozin
+A03,,HY-16974,10mM  * 10uL,Afoxolaner
+B03,,HY-B0254,10mM  * 10uL,Glipizide
+C03,,HY-107319,10mM  * 10uL,Almitrine mesylate
+D03,,HY-14570,10mM  * 10uL,Triphen diol
+E03,,HY-17360,10mM  * 10uL,Tiotropium (Bromide)
+F03,,HY-13636,10mM  * 10uL,Fulvestrant
+G03,,HY-A0062,10mM  * 10uL,Telithromycin
+H03,,HY-11106,10mM  * 10uL,Nintedanib esylate
+A04,,HY-17040,10mM  * 10uL,Darunavir
+B04,,HY-10119A,10mM  * 10uL,Vorapaxar (sulfate)
+C04,,HY-B0396,10mM  * 10uL,Tebipenem pivoxil
+D04,,HY-12866,10mM  * 10uL,Larotrectinib
+E04,,HY-13757,10mM  * 10uL,Tamoxifen (Citrate)
+F04,,HY-15660,10mM  * 10uL,Efinaconazole
+G04,,HY-101277,10mM  * 10uL,Vadadustat
+H04,,HY-B1393,10mM  * 10uL,Dehydrocholic acid
+A05,,HY-B0203A,10mM  * 10uL,Nebivolol (hydrochloride)
+B05,,HY-B1193,10mM  * 10uL,Terfenadine
+C05,,HY-12199B,10mM  * 10uL,Pitolisant (hydrochloride)
+D05,,HY-B0642,10mM  * 10uL,Isosorbide mononitrate
+E05,,HY-B0965,10mM  * 10uL,Thioridazine (hydrochloride)
+F05,,HY-B0204,10mM  * 10uL,Pimobendan
+G05,,HY-B0725,10mM  * 10uL,Doxepin (Hydrochloride)
+H05,,HY-B0293,10mM  * 10uL,Butoconazole (nitrate)
+A06,,HY-108292,10mM  * 10uL,Propacetamol (hydrochloride)
+B06,,HY-12199,10mM  * 10uL,Pitolisant
+C06,,HY-107801,10mM  * 10uL,Inosine pranobex
+D06,,HY-17460A,10mM  * 10uL,Garenoxacin (Mesylate hydrate)
+E06,,HY-B0107,10mM  * 10uL,Acitretin
+F06,,HY-13803,10mM  * 10uL,Tazemetostat
+G06,,HY-120497,10mM  * 10uL,PKC?-IN-1
+H06,,HY-12533A,10mM  * 10uL,Disopyramide (phosphate)
+A07,,HY-14894,10mM  * 10uL,Ipragliflozin
+B07,,HY-B0368,10mM  * 10uL,Captopril
+C07,,HY-17362,10mM  * 10uL,Vancomycin (hydrochloride)
+D07,,HY-132842,10mM  * 10uL,Sunvozertinib
+E07,,HY-B0181,10mM  * 10uL,Altretamine
+F07,,HY-N6804,10mM  * 10uL,Diammonium Glycyrrhizinate
+G07,,HY-14879A,10mM  * 10uL,Avibactam (sodium)
+H07,,HY-76569,10mM  * 10uL,Desfesoterodine
+A08,,HY-B0568,10mM  * 10uL,Deferiprone
+B08,,HY-17507B,10mM  * 10uL,Pantoprazole (sodium hydrate)
+C08,,HY-A0084A,10mM  * 10uL,Procainamide
+D08,,HY-B0224,10mM  * 10uL,Chlorothiazide
+E08,,HY-14946,10mM  * 10uL,Amifampridine
+F08,,HY-B1462,10mM  * 10uL,Chlorzoxazone
+G08,,HY-B1444,10mM  * 10uL,Isoconazole (nitrate)
+H08,,HY-13997,10mM  * 10uL,Ombitasvir
+A09,,HY-16391,10mM  * 10uL,Glasdegib
+B09,,HY-107429,10mM  * 10uL,Abrocitinib
+C09,,HY-B0537B,10mM  * 10uL,Pentamidine (isethionate)
+D09,,HY-B0115,10mM  * 10uL,Pizotifen
+E09,,HY-B0448,10mM  * 10uL,Phenytoin
+F09,,HY-B0138,10mM  * 10uL,Ketorolac (tromethamine salt)
+G09,,HY-145574,10mM  * 10uL,Iruplinalkib
+H09,,HY-12866A,10mM  * 10uL,Larotrectinib sulfate
+A10,,HY-12222,10mM  * 10uL,Obeticholic acid
+B10,,HY-B0640,10mM  * 10uL,Epinastine
+C10,,HY-B0113,10mM  * 10uL,Omeprazole
+D10,,HY-12687,10mM  * 10uL,Tizoxanide
+E10,,HY-B0774,10mM  * 10uL,Seratrodast
+F10,,HY-108402A,10mM  * 10uL,Cefodizime (sodium)
+G10,,HY-19569,10mM  * 10uL,Upadacitinib
+H10,,HY-A0251,10mM  * 10uL,Cefpodoxime
+A11,,HY-B0822,10mM  * 10uL,Fipronil
+B11,,HY-121276,10mM  * 10uL,Benperidol
+C11,,HY-A0248B,10mM  * 10uL,Polymyxin B2
+D11,,HY-111406,10mM  * 10uL,Omidenepag isopropyl
+E11,,HY-10004,10mM  * 10uL,Faropenem daloxate
+F11,,HY-18540,10mM  * 10uL,KT109
+G11,,HY-B0552A,10mM  * 10uL,Dibucaine (hydrochloride)
+H11,,HY-B1729,10mM  * 10uL,Phenoxyethanol
+A12,,HY-N1919,10mM  * 10uL,Ajmalicine
+B12,,HY-B1802A,10mM  * 10uL,Tosufloxacin (tosylate hydrate)
+C12,,HY-B0132,10mM  * 10uL,Norfloxacin
+D12,,HY-10572,10mM  * 10uL,Efavirenz
+E12,,HY-14290,10mM  * 10uL,Pinacidil
+F12,,HY-B0406A,10mM  * 10uL,Bethanechol (chloride)
+G12,,HY-14544,10mM  * 10uL,Quetiapine
+H12,,HY-B0259,10mM  * 10uL,Indapamide

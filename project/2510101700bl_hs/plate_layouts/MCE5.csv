@@ -1,0 +1,97 @@
+well,strain,drug,conc,name
+A01,,DMSO,0.5%,DMSO
+B01,,DMSO,0.5%,DMSO
+C01,,DMSO,0.5%,DMSO
+D01,,DMSO,0.5%,DMSO
+E01,,DMSO,0.5%,DMSO
+F01,,DMSO,0.5%,DMSO
+G01,,DMSO,0.5%,DMSO
+H01,,DMSO,0.5%,DMSO
+A02,,HY-B0647,10mM  * 10uL,Butylphthalide
+B02,,HY-10961,10mM  * 10uL,Momelotinib
+C02,,HY-B1223,10mM  * 10uL,Anethole trithione
+D02,,HY-B0885,10mM  * 10uL,Econazole
+E02,,HY-B0570,10mM  * 10uL,Decamethonium (Bromide)
+F02,,HY-B0813,10mM  * 10uL,Treprostinil (diethanolamine)
+G02,,HY-B1227,10mM  * 10uL,Carprofen
+H02,,HY-10997,10mM  * 10uL,Ibrutinib
+A03,,HY-B0430A,10mM  * 10uL,D-Pantothenic acid (sodium)
+B03,,HY-15287,10mM  * 10uL,Nelfinavir
+C03,,HY-17361,10mM  * 10uL,Etofenamate
+D03,,HY-104044,10mM  * 10uL,Pamiparib
+E03,,HY-10569,10mM  * 10uL,Ponesimod
+F03,,HY-15296,10mM  * 10uL,Cabergoline
+G03,,HY-B1784,10mM  * 10uL,Sulfisomidin
+H03,,HY-B0130A,10mM  * 10uL,Perindopril (erbumine)
+A04,,HY-14842A,10mM  * 10uL,Givinostat (hydrochloride)
+B04,,HY-B0891,10mM  * 10uL,17?-Hydroxyprogesterone
+C04,,HY-B1464,10mM  * 10uL,Cetylpyridinium (chloride)
+D04,,HY-B1690A,10mM  * 10uL,Methdilazine (hydrochloride)
+E04,,HY-N0192,10mM  * 10uL,Arbutin
+F04,,HY-50904,10mM  * 10uL,Nintedanib
+G04,,HY-B0469,10mM  * 10uL,Medroxyprogesterone acetate
+H04,,HY-B1055,10mM  * 10uL,Pentoxyverine (citrate)
+A05,,HY-13071,10mM  * 10uL,Nestoron
+B05,,HY-A0145,10mM  * 10uL,Phenprocoumon
+C05,,HY-N0898,10mM  * 10uL,Catechin
+D05,,HY-B1210,10mM  * 10uL,Pipemidic acid
+E05,,HY-103022,10mM  * 10uL,Repotrectinib
+F05,,HY-10264A,10mM  * 10uL,Edoxaban (tosylate)
+G05,,HY-B0491A,10mM  * 10uL,Carbazochrome (sodium sulfonate)
+H05,,HY-A0142A,10mM  * 10uL,Dapiprazole (hydrochloride)
+A06,,HY-107923,10mM  * 10uL,Sulfisoxazole acetyl
+B06,,HY-14667,10mM  * 10uL,Lomitapide
+C06,,HY-14196,10mM  * 10uL,Toloxatone
+D06,,HY-B2169,10mM  * 10uL,Melperone
+E06,,HY-B1320,10mM  * 10uL,Meclofenamic acid (sodium)
+F06,,HY-N0676,10mM  * 10uL,Dehydroandrographolide
+G06,,HY-129040A,10mM  * 10uL,Iobenguane (sulfate)
+H06,,HY-B0888,10mM  * 10uL,Sulfacetamide (sodium monohydrate)
+A07,,HY-100375,10mM  * 10uL,Diroximel fumarate
+B07,,HY-14739,10mM  * 10uL,Choline Fenofibrate
+C07,,HY-B0714,10mM  * 10uL,Dexketoprofen (trometamol)
+D07,,HY-B1150,10mM  * 10uL,Clofoctol
+E07,,HY-15310,10mM  * 10uL,Ivermectin
+F07,,HY-B1743,10mM  * 10uL,Puromycin
+G07,,HY-103252,10mM  * 10uL,Monomethyl fumarate
+H07,,HY-19733,10mM  * 10uL,Lumateperone (tosylate)
+A08,,HY-B0209,10mM  * 10uL,Metolazone
+B08,,HY-B0306,10mM  * 10uL,Prothionamide
+C08,,HY-10977,10mM  * 10uL,Tivozanib
+D08,,HY-B1761,10mM  * 10uL,Santonin
+E08,,HY-N0110,10mM  * 10uL,Palmatine (chloride)
+F08,,HY-A0010,10mM  * 10uL,Eletriptan (hydrobromide)
+G08,,HY-15409,10mM  * 10uL,Empagliflozin
+H08,,HY-14270,10mM  * 10uL,Lodoxamide
+A09,,HY-50858,10mM  * 10uL,Ruxolitinib (phosphate)
+B09,,HY-B1404,10mM  * 10uL,Nylidrin (hydrochloride)
+C09,,HY-B0595,10mM  * 10uL,Ramosetron (Hydrochloride)
+D09,,HY-10466,10mM  * 10uL,Daclatasvir
+E09,,HY-B1259,10mM  * 10uL,6-Acetamidohexanoic acid
+F09,,HY-10260,10mM  * 10uL,Vandetanib
+G09,,HY-10261A,10mM  * 10uL,Afatinib (dimaleate)
+H09,,HY-B1222A,10mM  * 10uL,Sisomicin
+A10,,HY-13715A,10mM  * 10uL,Norepinephrine (hydrochloride)
+B10,,HY-17416,10mM  * 10uL,Guanfacine (hydrochloride)
+C10,,HY-W018326,10mM  * 10uL,Temozolomide acid
+D10,,HY-B2111,10mM  * 10uL,(R)-(+)-Atenolol
+E10,,HY-119824,10mM  * 10uL,Trofosfamide
+F10,,HY-N0565A,10mM  * 10uL,Doxycycline (hydrochloride)
+G10,,HY-109025,10mM  * 10uL,Baloxavir marboxil
+H10,,HY-B0117,10mM  * 10uL,Tigecycline
+A11,,HY-B0581,10mM  * 10uL,Dexrazoxane
+B11,,HY-N7065,10mM  * 10uL,Dihydralazine (sulfate)
+C11,,HY-14865,10mM  * 10uL,Omadacycline
+D11,,HY-B0556,10mM  * 10uL,Tetrahydrozoline
+E11,,HY-B0292A,10mM  * 10uL,Atracurium (besylate)
+F11,,HY-11100,10mM  * 10uL,Asenapine (maleate)
+G11,,HY-B0457,10mM  * 10uL,Clomipramine (hydrochloride)
+H11,,HY-17465,10mM  * 10uL,Glycopyrrolate
+A12,,HY-W016715,10mM  * 10uL,L-Cysteine (hydrochloride hydrate)
+B12,,HY-A0036,10mM  * 10uL,Bazedoxifene (acetate)
+C12,,HY-N0733,10mM  * 10uL,Glucosamine (hydrochloride)
+D12,,HY-17443B,10mM  * 10uL,Sivelestat (sodium tetrahydrate)
+E12,,HY-104010A,10mM  * 10uL,Asciminib (hydrochloride)
+F12,,HY-13624A,10mM  * 10uL,Epirubicin (hydrochloride)
+G12,,HY-N2064,10mM  * 10uL,Racanisodamine
+H12,,HY-15122A,10mM  * 10uL,Sinomenine hydrochloride
