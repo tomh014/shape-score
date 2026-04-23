@@ -1,7 +1,6 @@
 # ShapeScore
 Automatically score C. elegans survival from still images based on posture using FasterRCNN and SAM 2.
 
-Inline-style: 
 ![alt text](https://github.com/tomh014/shape-score/blob/main/summary%20figure%20small.png)
 
 Worm detector weights:
