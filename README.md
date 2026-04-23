@@ -3,6 +3,7 @@ Automatically score C. elegans survival from still images based on posture using
 
 Worm detector weights:
 https://huggingface.co/hodde014/worm-detector/blob/main/fasterrcnn_depl.pth
+
 Worm detector training data/annotations:
 https://huggingface.co/hodde014/worm-detector/blob/main/data.zip
 
