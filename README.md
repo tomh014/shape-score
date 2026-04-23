@@ -1,5 +1,5 @@
 # ShapeScore
-Automatically score C. elegans survival from still images based on posture using FasterRCNN and SAM 2.
+Automatically score *C. elegans* survival from still images based on posture using FasterRCNN and SAM 2.
 
 ![alt text](https://github.com/tomh014/shape-score/blob/main/summary%20figure%20small.png)
 
