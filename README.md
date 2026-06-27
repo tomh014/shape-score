@@ -32,9 +32,10 @@ https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combi
 **Usage**  
 Examples of usage can be found in the jupyter notebooks detection.ipynb and visualization.ipynb. ShapeScore requires this specific directory/project folder structure to function. run_detection.py can also be ran from the main directory to produce worm scores from images. 
 
-
+Training data:  
 Worm detector training data/annotations:  
 https://huggingface.co/hodde014/worm-detector/blob/main/data.zip  
+
 Survival classifier training data:  
 https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combined_5-21.zip  
 
