@@ -19,16 +19,13 @@ python -m pip install -r requirements.txt
 
 Download the following three models and add to the "model" folder in the main ShapeScore directory:
 
-Worm detector weights
-
+Worm detector weights:  
 https://huggingface.co/hodde014/worm-detector/blob/main/fasterrcnn_depl.pth
 
-SAM 2 tiny
-
+SAM 2 tiny:  
 https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt
 
-Survival classifier weights
-
+Survival classifier weights:  
 https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combined_5-21.combined_model_5-20-25.deadalive.pth
 
 
