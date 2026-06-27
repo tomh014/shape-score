@@ -1,0 +1,5 @@
+field,name
+0,timepoint
+1,plate
+2,well
+3,optical_config

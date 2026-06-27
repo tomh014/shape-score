@@ -86,17 +86,18 @@ def visualize_predictions(image_path, results_df, output_path="prediction.png"):
     print(f"Saved visualization to {output_path}")
 
     # Optionally, display the image
-    img.show()
+    #img.show()
     
 def predict_bb(proj,model= "model/fasterrcnn_depl.pth"):
     
+    print('Detecting objects...')
     # --- (B) Prepare Dataset and DataLoader ---
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     
     # --- (F) Run Inference ---
     # Re-initialize the model for inference (a good practice)
     inference_model = get_model(num_classes=2)    
-    inference_model.load_state_dict(torch.load(model))
+    inference_model.load_state_dict(torch.load(model, map_location=torch.device(device)))
     
     # Get and print tabular results
     res=pd.DataFrame()

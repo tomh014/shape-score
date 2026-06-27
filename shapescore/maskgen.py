@@ -4,26 +4,17 @@ https://github.com/facebookresearch/segment-anything/blob/main/notebooks/automat
 """
 import os
 import torch
-import torchvision
 import numpy as np
-import torch
 import cv2
-import time
-from datetime import datetime
-from PIL import Image, ImageEnhance, ImageFile
+from PIL import Image, ImageFile
 from tqdm import tqdm
 import pandas as pd
-import sys
 import glob
 import gc
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
-import pandas as pd
 
 
-def sum_channels(img):
-    summed_img = img[:,:,0]+img[:,:,1]+img[:,:,2]
-    return summed_img
 
 def bbox2(img): #https://stackoverflow.com/questions/31400769/bounding-box-of-numpy-array
     rows = np.any(img, axis=1)
@@ -40,9 +31,10 @@ def rm(path):
         pass
     
 
-def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt",bf='Brightfield2and4ul',
-                  upper=600,lower=50,batch_size=4):
+def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt",bf=None,
+                  upper=600,lower=50,batch_size=4, save_tiff=False):
     
+    print('Generating masks...')
     # select the device for computation
     if torch.cuda.is_available():
         device = torch.device("cuda")
@@ -56,9 +48,9 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
     indir='project/'+project_id+'/processed_mask'
 
 
-    out_folder =indir+'/mask_raw/mask_raw'
+    out_folder =indir+'/mask_raw/mask_raw';out_folder2 =indir+'/mask_raw_uncropped/mask_raw_uncropped'
     os.makedirs(indir,exist_ok=True)
-    os.makedirs(indir+'/mask_raw/mask_raw',exist_ok=True)
+    os.makedirs(out_folder,exist_ok=True);os.makedirs(out_folder2,exist_ok=True)
     ImageFile.LOAD_TRUNCATED_IMAGES = False
     
     model_cfg = "configs/sam2/sam2_hiera_t.yaml"
@@ -66,7 +58,10 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
     sam2_model = build_sam2(model_cfg, sam2_checkpoint, device=device)
     predictor = SAM2ImagePredictor(sam2_model)
     
-    files = [x  for x in os.listdir(in_folder) if bf in x]
+    if bf == None:
+        files=os.listdir(in_folder)
+    else:
+        files = [x  for x in os.listdir(in_folder) if bf in x]
     order_df=pd.DataFrame({'img':files})
     order_df.to_csv(indir+'/maskgen_order.csv')
     
@@ -163,8 +158,10 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
                         
                         mask_im_square[mask_im_square!=0]=255
                         cv2.imwrite(out_folder+'/'+img_name+'_mask'+str(i)+'.jpg', mask_im_square)
-        except:
-            continue
+                    if save_tiff: 
+                            os.makedirs(out_folder2+'/'+img_name,exist_ok=True)
+                            cv2.imwrite(out_folder2+'/'+img_name+'/'+img_name+'_mask'+str(i)+'.tiff', binary_masked_image)
+        except Exception as e: print(e)
         pbar.update()
     
         
