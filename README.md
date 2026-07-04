@@ -28,7 +28,7 @@ Worm detector weights:
 https://huggingface.co/hodde014/worm-detector/resolve/main/fasterrcnn_depl.pth
 
 SAM 2 tiny:  
-https://drive.google.com/file/d/10o3Rnf5IYubdGVmNlZSv_GveIVyoehHV/view?usp=sharing
+https://huggingface.co/hodde014/sam2.0_hiera_tiny/resolve/main/sam2_hiera_tiny.pt
 
 Survival classifier weights:  
 https://huggingface.co/hodde014/worm-posture-survival-classifier/resolve/main/combined_5-21.combined_model_5-20-25.deadalive.pth
