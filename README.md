@@ -5,18 +5,17 @@ Automatically score *C. elegans* survival from still images based on posture usi
 
 **Installation**  
 ShapeScore can optionally be used from a virtual environment with, for example, conda. 
-Create a new environment with:
+Create and activate a new environment with:
 ```
 conda create -n shapescore python=3.11
-```
-activate the environment with:
-```
-conda activate shapescore
+conda create -n shapescore python=3.11conda activate shapescore
 ```
 Install the required packages to your environemnt with:
 ```
 python -m pip install -r requirements.txt  
 ```
+
+
 Alternatively, create the environment in one line with
 ```
 conda env create --shapescore --file=shapescore.yml
