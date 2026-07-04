@@ -9,11 +9,17 @@ Create a new environment with:
 ```
 conda create -n shapescore python=3.11
 ```
-
-Follow the instructions on https://pytorch.org/ to install the required version of pytorch. ShapeScore supports both GPU and CPU.
-From the virtual environment, install the required packages with the requirements.txt file using:
+activate the environment with:
+```
+conda activate shapescore
+```
+Install the required packages to your environemnt with:
 ```
 python -m pip install -r requirements.txt  
+```
+Alternatively, create the environment in one line with
+```
+conda env create --shapescore --file=shapescore.yml
 ```
 
 
