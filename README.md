@@ -45,6 +45,8 @@ shapescore1.x/
 │      ├── fields.csv
 ```
 
+The "fields.csv" should describe the user's desired naming convention for well-level images in input_raw with identifiers seperated by underscores, or [field 1]_[field2]_...[field n].jpg. For example, one may use timepoint_plate_well_opticalconfig.jpg as used in the example projects. The only required fields are plate and well. fields.csv has two columns for the field index and the name of the field.
+
 Training data:  
 Worm detector training data/annotations:  
 https://huggingface.co/hodde014/worm-detector/blob/main/data.zip  
