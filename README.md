@@ -30,7 +30,7 @@ https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combi
 
 
 **Usage**  
-This repository can be cloned locally and code can be ran from the main directory. Examples of usage can be found in the jupyter notebooks detection.ipynb and visualization.ipynb. ShapeScore requires this specific directory/project folder structure to function, described in more detail in detection.pynb. run_pipeline.py can also be ran from the main directory to produce worm scores from images. 
+This repository can be cloned locally and code can be ran from the main directory. Users should follow detection.ipynb for a more detailed walkthrough of the software. visualization.ipynb and train_classifier.ipynb can be followed for visual inspection of automated detection/segmentation and training a custom classifier.
 
 **Project setup**  
 A typical project for assessment of survival will be set up as follows:
