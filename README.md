@@ -25,13 +25,13 @@ conda env create --name shapescore --file=shapescore.yml
 Download the following three models and add to the "model" folder in the main ShapeScore directory:
 
 Worm detector weights:  
-https://huggingface.co/hodde014/worm-detector/blob/main/fasterrcnn_depl.pth
+https://huggingface.co/hodde014/worm-detector/resolve/main/fasterrcnn_depl.pth
 
 SAM 2 tiny:  
 https://drive.google.com/file/d/10o3Rnf5IYubdGVmNlZSv_GveIVyoehHV/view?usp=sharing
 
 Survival classifier weights:  
-https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combined_5-21.combined_model_5-20-25.deadalive.pth
+https://huggingface.co/hodde014/worm-posture-survival-classifier/resolve/main/combined_5-21.combined_model_5-20-25.deadalive.pth
 
 
 **Usage**  
