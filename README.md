@@ -8,7 +8,7 @@ ShapeScore can optionally be used from a virtual environment with, for example, 
 Create and activate a new environment with:
 ```
 conda create -n shapescore python=3.11
-conda create -n shapescore python=3.11conda activate shapescore
+conda activate shapescore
 ```
 Install the required packages to your environemnt with:
 ```
