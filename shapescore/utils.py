@@ -24,9 +24,9 @@ def make_mask_df(in_dir, proj_dir):
     return df
 
 
-def make_layout_df(project_dir):
-    files =os.listdir(project_dir+'/plate_layouts')
-    dfs=[pd.read_csv(project_dir+'/plate_layouts/'+f) for f in files]
+def make_layout_df(proj_dir):
+    files =os.listdir(proj_dir+'/plate_layouts')
+    dfs=[pd.read_csv(proj_dir+'/plate_layouts/'+f) for f in files]
     plates=[s.replace('.csv','') for s in files]
     for n, df in dict(zip(plates,dfs)).items():
         df['plate']=[n]*len(df)

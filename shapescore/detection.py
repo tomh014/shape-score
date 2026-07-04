@@ -88,7 +88,7 @@ def visualize_predictions(image_path, results_df, output_path="prediction.png"):
     # Optionally, display the image
     #img.show()
     
-def predict_bb(proj,model= "model/fasterrcnn_depl.pth"):
+def predict_bb(proj_dir,model= "model/fasterrcnn_depl.pth"):
     
     print('Detecting objects...')
     # --- (B) Prepare Dataset and DataLoader ---
@@ -101,7 +101,7 @@ def predict_bb(proj,model= "model/fasterrcnn_depl.pth"):
     
     # Get and print tabular results
     res=pd.DataFrame()
-    INPUT_FOLDER='project/'+proj+'/input_raw'
+    INPUT_FOLDER=proj_dir+'/input_raw'
     for im in tqdm(os.listdir(INPUT_FOLDER)):
         TEST_IMAGE_PATH=INPUT_FOLDER+'/'+im
         inference_results = run_inference(inference_model, device, TEST_IMAGE_PATH,
@@ -109,4 +109,4 @@ def predict_bb(proj,model= "model/fasterrcnn_depl.pth"):
         inference_results['filename']=[im]*len(inference_results)
         res=pd.concat([res,inference_results],axis=0)
         
-    res.to_csv('project/'+proj+'/'+'bounding_boxes.csv',index=False)
+    res.to_csv(proj_dir+'/'+'bounding_boxes.csv',index=False)

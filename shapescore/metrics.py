@@ -39,10 +39,9 @@ def get_metrics(mask_df): #dfs should have same wells
 
 
 
-def metrics(project, upper=600,lower=100):
-    in_fol = 'project/'+project+'/processed_mask/mask_raw/mask_raw'
-    proj_dir='project/'+project
-    
+def metrics(proj_dir, project, upper=600,lower=100):
+    in_fol = proj_dir+'/processed_mask/mask_raw/mask_raw'
+   
     mask_df = make_mask_df(in_fol, proj_dir)
     print('Calculating metrics...')
     mask_metrics = get_metrics(mask_df)

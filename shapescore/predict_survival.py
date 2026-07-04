@@ -49,9 +49,8 @@ def get_image_scores(path,device, dataloaders, image_datasets):
     return res
         
 
-def predict_survival(project_id , model='model/combined_5-21.combined_model_5-20-25.deadalive.pth'):
+def predict_survival(proj_dir , model='model/combined_5-21.combined_model_5-20-25.deadalive.pth'):
 
-    proj_dir = 'project/'+project_id
     in_dir=proj_dir+'/processed_mask/mask_raw/mask_raw'
     os.makedirs(proj_dir+'/res',exist_ok=True)
     

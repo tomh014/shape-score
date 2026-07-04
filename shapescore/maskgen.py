@@ -31,7 +31,7 @@ def rm(path):
         pass
     
 
-def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt",bf=None,
+def predict_segmentation(proj_dir, sam2_checkpoint = "model/sam2_hiera_tiny.pt",bf=None,
                   upper=600,lower=50,batch_size=4, save_tiff=False):
     
     print('Generating masks...')
@@ -44,13 +44,13 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
         device = torch.device("cpu")
         
     
-    in_folder = 'project/'+project_id+'/input_raw'
-    indir='project/'+project_id+'/processed_mask'
+    in_folder = proj_dir+'/input_raw'
+    indir=proj_dir+'/processed_mask'
 
 
     out_folder =indir+'/mask_raw/mask_raw';out_folder2 =indir+'/mask_raw_uncropped/mask_raw_uncropped'
     os.makedirs(indir,exist_ok=True)
-    os.makedirs(out_folder,exist_ok=True);os.makedirs(out_folder2,exist_ok=True)
+    os.makedirs(out_folder,exist_ok=True);
     ImageFile.LOAD_TRUNCATED_IMAGES = False
     
     model_cfg = "configs/sam2/sam2_hiera_t.yaml"
@@ -96,24 +96,30 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
     iters=len(files)//batch_size
     if len(files)%batch_size == 0:
         iters+=1
-    boxdf=pd.read_csv('project/'+project_id+'/bounding_boxes.csv')
+    boxdf=pd.read_csv(proj_dir+'/bounding_boxes.csv')
     
     ix=0
     
     pbar=tqdm(total=iters,leave=True)
-    while ix+batch_size <= len(files):
-        batch_filenames=files[ix:(ix+batch_size)]
+    for ix in range(0, len(files), batch_size):
+        batch_filenames = files[ix:ix+batch_size]
         batch_filenames=[x.split('\\')[-1] for x in batch_filenames]
-        boxes_batch=[]
+        boxes_batch = []
         img_batch = []
+        valid_filenames = []
+        
         for f in batch_filenames:
-            image = Image.open('project/'+project_id+'/input_raw/'+f)
+            image = Image.open(proj_dir+'/input_raw/'+f)
             image = np.array(image.convert("RGB"))
-            bs=np.array(boxdf[boxdf['filename']==f][['x_min','y_min','x_max','y_max']])
-            if len(bs)!=0:
+        
+            bs = np.array(
+                boxdf[boxdf['filename'] == f][['x_min','y_min','x_max','y_max']]
+            )
+        
+            if len(bs) != 0:
                 boxes_batch.append(bs)
                 img_batch.append(image)
-        
+                valid_filenames.append(f)
         try:
             predictor.set_image_batch(img_batch)
             masks_batch, scores_batch, _ = predictor.predict_batch(
@@ -128,7 +134,7 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
             gc.collect()
             torch.cuda.empty_cache()
     
-            for masks,img_name in zip(masks_batch,batch_filenames):
+            for masks, img_name in zip(masks_batch, valid_filenames):
                 for i in range(len(masks)):
                     
                     mask2=masks[i]
@@ -159,6 +165,7 @@ def predict_segmentation(project_id, sam2_checkpoint = "model/sam2_hiera_tiny.pt
                         mask_im_square[mask_im_square!=0]=255
                         cv2.imwrite(out_folder+'/'+img_name+'_mask'+str(i)+'.jpg', mask_im_square)
                     if save_tiff: 
+                            os.makedirs(out_folder2,exist_ok=True)
                             os.makedirs(out_folder2+'/'+img_name,exist_ok=True)
                             cv2.imwrite(out_folder2+'/'+img_name+'/'+img_name+'_mask'+str(i)+'.tiff', binary_masked_image)
         except Exception as e: print(e)
