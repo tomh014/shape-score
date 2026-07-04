@@ -32,6 +32,8 @@ https://huggingface.co/hodde014/worm-posture-survival-classifier/blob/main/combi
 **Usage**  
 This repository can be cloned locally and code can be ran from the main directory. Examples of usage can be found in the jupyter notebooks detection.ipynb and visualization.ipynb. ShapeScore requires this specific directory/project folder structure to function, described in more detail in detection.pynb. run_pipeline.py can also be ran from the main directory to produce worm scores from images. 
 
+**Project setup**  
+A typical project for assessment of survival will be set up as follows:
 ```
 shapescore1.x/
 ├── project/
@@ -47,6 +49,9 @@ shapescore1.x/
 
 The "fields.csv" should describe the user's desired naming convention for well-level images in input_raw with identifiers seperated by underscores, or [field 1]\_[field2]\_...[field n].jpg. For example, one may use timepoint_plate_well_opticalconfig.jpg as used in the example projects. The only required fields are plate and well. fields.csv has two columns for the field index and the name of the field.
 
+plate_layouts contains a .csv with two required columns (index and well) along with all fields except plate. Each .csv in the plate_layouts folder should be named according to a plate represented in the filenames of images in the input_raw folder. Indicies begin at well A01 and proceed down the column and begin again at the top of the next column (e.g. 0-7 is A01-H01, 8-15 is A02-H02). Provided example plate layouts can be used and modified. 
+
+**Additional data**  
 Training data:  
 Worm detector training data/annotations:  
 https://huggingface.co/hodde014/worm-detector/blob/main/data.zip  
