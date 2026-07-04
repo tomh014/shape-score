@@ -33,6 +33,12 @@ https://huggingface.co/hodde014/sam2.0_hiera_tiny/resolve/main/sam2_hiera_tiny.p
 Survival classifier weights:  
 https://huggingface.co/hodde014/worm-posture-survival-classifier/resolve/main/combined_5-21.combined_model_5-20-25.deadalive.pth
 
+Alternatively, from the main software directory, run:
+```
+wget -P model/ https://huggingface.co/hodde014/worm-detector/resolve/main/fasterrcnn_depl.pth
+wget -P model/ https://huggingface.co/hodde014/sam2.0_hiera_tiny/resolve/main/sam2_hiera_tiny.pt
+wget -P model/ https://huggingface.co/hodde014/worm-posture-survival-classifier/resolve/main/combined_5-21.combined_model_5-20-25.deadalive.pth
+```
 
 **Usage**  
 This repository can be cloned locally and code can be ran from the main directory. Users should follow detection.ipynb for a more detailed walkthrough of the software. visualization.ipynb and train_classifier.ipynb can be followed for visual inspection of automated detection/segmentation and training a custom classifier.
