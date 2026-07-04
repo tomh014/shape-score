@@ -18,7 +18,7 @@ python -m pip install -r requirements.txt
 
 Alternatively, create the environment in one line with
 ```
-conda env create --shapescore --file=shapescore.yml
+conda env create --name shapescore --file=shapescore.yml
 ```
 
 
