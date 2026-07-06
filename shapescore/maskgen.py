@@ -32,7 +32,7 @@ def rm(path):
     
 
 def predict_segmentation(proj_dir, sam2_checkpoint = "model/sam2_hiera_tiny.pt",bf=None,
-                  upper=600,lower=50,batch_size=4, save_tiff=False):
+                  upper=600,lower=50,batch_size=4, save_tiff=False, force=False):
     
     print('Generating masks...')
     # select the device for computation
@@ -74,20 +74,22 @@ def predict_segmentation(proj_dir, sam2_checkpoint = "model/sam2_hiera_tiny.pt",
     #delete masks from last image done in case it wasn't completed
     
     list_of_files = glob.glob(indir+'/mask_raw/mask_raw/*') # * means all if need specific format then *.csv
-    try:
-        latest_file = max(list_of_files, key=os.path.getctime)
-        latest_file=latest_file.split('/')[-1]
-    except:
-        latest_file=''
-    if latest_file!='':
-        latest_well_im=latest_file.split('_mask')[0]
-        del_masks=[x for x in made_masks if x.split('_mask')[0]==latest_well_im]
-        for mask in del_masks:
-            rm(indir+'/mask_raw/mask_raw/'+mask)
-            rm(indir+'/mask_uncropped/'+mask.replace('jpg','tiff'))
-        unmasked_well_imgs.append(latest_well_im)
-        unmasked_well_imgs=list(set(unmasked_well_imgs))
-        files=unmasked_well_imgs
+    
+    if not force: #pick up segmentation where it left off if force==False
+        try:
+            latest_file = max(list_of_files, key=os.path.getctime)
+            latest_file=latest_file.split('/')[-1]
+        except:
+            latest_file=''
+        if latest_file!='':
+            latest_well_im=latest_file.split('_mask')[0]
+            del_masks=[x for x in made_masks if x.split('_mask')[0]==latest_well_im]
+            for mask in del_masks:
+                rm(indir+'/mask_raw/mask_raw/'+mask)
+                rm(indir+'/mask_uncropped/'+mask.replace('jpg','tiff'))
+            unmasked_well_imgs.append(latest_well_im)
+            unmasked_well_imgs=list(set(unmasked_well_imgs))
+            files=unmasked_well_imgs
     
     
     """bounding box prompts"""
@@ -100,7 +102,7 @@ def predict_segmentation(proj_dir, sam2_checkpoint = "model/sam2_hiera_tiny.pt",
     
     ix=0
     
-    pbar=tqdm(total=iters,leave=True)
+    pbar=tqdm(total=iters-1,leave=True)
     for ix in range(0, len(files), batch_size):
         batch_filenames = files[ix:ix+batch_size]
         batch_filenames=[x.split('\\')[-1] for x in batch_filenames]
