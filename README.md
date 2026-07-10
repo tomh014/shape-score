@@ -10,7 +10,7 @@ Create and activate a new environment with:
 conda create -n shapescore python=3.11
 conda activate shapescore
 ```
-Install the required packages to your environemnt with:
+Install the required packages to your environment with:
 ```
 python -m pip install -r requirements.txt  
 ```
