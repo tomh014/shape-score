@@ -5,7 +5,7 @@ import numpy as np
 import colorsys
 
 def sum_channels(img):
-    summed_img = img[:,:,0]+img[:,:,1]+img[:,:,2]
+    summed_img = img[:,:,0].astype(np.int64)+img[:,:,1].astype(np.int64)+img[:,:,2].astype(np.int64)
     return summed_img
 
 def make_mask_df(in_dir, proj_dir):
