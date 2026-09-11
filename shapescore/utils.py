@@ -90,3 +90,37 @@ def overlay_masks_on_image(
         Image.fromarray(result).save(output_path)
 
         print(f"Saved overlay image to: {output_path}")
+
+
+def summarize_to_well(proj):
+    
+    mask_df = pd.read_csv('project/'+proj+'/res/res.csv',index_col=0).set_index(['well','plate'])
+    layout = make_layout_df('project/'+proj)
+    layout['project']=[proj]*len(layout)
+
+    mask2=mask_df[[(x in list(set(layout.index))) for x in mask_df.index]]
+    mdata=pd.concat([mask2, layout.loc[mask2.index]],axis=1).dropna(subset=['alive_softmax']).reset_index()
+    mdata['count']=[1]*len(mdata)
+    agg={c:'first' for c in mdata.columns}
+    agg['alive_softmax']='mean'
+    agg['count']='sum'
+    agg['intensity_avg']='mean'
+    agg['size']='mean'
+    mdata=mdata.loc[:,~mdata.columns.duplicated()].copy()
+    mdata['wpp']=mdata['well'].values+mdata['plate'].values+mdata['project'].values
+    surv=mdata.groupby('wpp').agg(agg).reset_index().drop(columns=['wpp'])
+
+    return surv
+
+def normalize(surv, ctrl_name='DMSO'): #cutoff - std deviations above mean
+    #normalize for ctrls
+    surv2=pd.DataFrame()
+    for plate in list(set(surv['plate'])):
+        df=surv[surv['plate']==plate]
+        ctrl_avg=np.mean(df[df['drug']==ctrl_name]['alive_softmax'])
+        df['norm SAP']=df['alive_softmax']/ctrl_avg
+        ctrl_avg_size=np.mean(df[df['drug']==ctrl_name]['size'])
+        df['norm size']=df['size']/ctrl_avg_size
+        surv2=pd.concat([surv2,df],axis=0)
+    return surv2
+
